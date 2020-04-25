@@ -10,11 +10,16 @@ class Countdown extends Component {
 
   counter = () => {
     const timeTillDate = this.props.finalDate;
-    const timeFormat = "DD-MM-YYYY";
+    const timeFormat = "DD-MM-YYYY HH:mm";
     const then = moment(timeTillDate, timeFormat);
     const now = moment();
 
     const totalSeconds = then.diff(now, "seconds");
+    if (totalSeconds <= 0) {
+      clearInterval(this.interval);
+      return { isCompleted: true };
+    }
+
     const totalMinutes = totalSeconds / 60;
     const seconds = totalSeconds % 60;
 
@@ -34,6 +39,7 @@ class Countdown extends Component {
 
   componentDidMount() {
     this.interval = setInterval(() => {
+      console.log("timer is running");
       this.setState(this.counter());
     }, 1000);
   }
@@ -41,7 +47,13 @@ class Countdown extends Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
+
   render() {
+    if (this.state.isCompleted === true) {
+      return (
+        <div className="completed-countdown">This is an Awesomw Website!</div>
+      );
+    }
     return (
       <div className="main-container">
         <div className={this.props.theme}>

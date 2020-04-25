@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div>
         <Countdown
-          finalDate="27-04-2020"
+          finalDate="25-04-2020 18:46"
           img=""
           theme="dark"
           title="Coming Soon"

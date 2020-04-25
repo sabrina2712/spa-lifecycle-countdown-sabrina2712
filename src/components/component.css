@@ -34,3 +34,14 @@
 .head {
   font-weight: bold;
 }
+
+.completed-countdown {
+  background-color: hotpink;
+  width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 50px;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+}
