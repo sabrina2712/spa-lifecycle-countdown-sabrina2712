@@ -32,6 +32,15 @@ class Countdown extends Component {
     };
   };
 
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.setState(this.counter());
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
   render() {
     return (
       <div className="main-container">
