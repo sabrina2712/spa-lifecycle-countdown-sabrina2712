@@ -1,0 +1,36 @@
+.main-container {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  font-size: large;
+  margin: 30px;
+}
+.left-container {
+  background-color: #282c34;
+  color: white;
+  padding: 10px;
+  font-size: 1.6em;
+}
+
+.right-container {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-size: 1.6em;
+}
+.label {
+  color: red;
+}
+.dark .label {
+  color: green;
+}
+.light .label {
+  color: black;
+}
+.title {
+  font-weight: bold;
+}
+.head {
+  font-weight: bold;
+}
